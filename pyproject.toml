@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "open_polymer_prediction"
+version = "0.0.1"
+description = "A short description of the project."
+authors = [
+  { name = "Giovani Zanfra Brand\u00e3o" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.12.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["open_polymer_prediction"]
+include = ["pyproject.toml", "open_polymer_prediction/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["open_polymer_prediction"]
+force-sort-within-sections = true
+
