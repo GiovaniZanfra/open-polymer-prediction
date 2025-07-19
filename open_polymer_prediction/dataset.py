@@ -72,9 +72,11 @@ def add_extra_data(df: pd.DataFrame, df_extra: pd.DataFrame, target: str) -> pd.
 def process_raw():
     # 1. Load raw data
     train = pd.read_csv(RAW / 'train.csv')
+    test = pd.read_csv(RAW / 'test.csv')
+
     # flag original data
     train['is_external'] = False
-    test = pd.read_csv(RAW / 'test.csv')
+    test['is_external'] = False
 
     # canonicalize SMILES in train
     train['SMILES'] = train['SMILES'].map(make_smile_canonical)
